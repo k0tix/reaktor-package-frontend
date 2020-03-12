@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:8000/api/packages'
+const baseUrl = '/api/packages'
 
 const getAll = async () => {
     const response = await axios.get(baseUrl)

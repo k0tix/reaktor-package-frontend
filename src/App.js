@@ -7,13 +7,13 @@ import PackageList from './components/PackageList'
 
 const App = () => {
     const [pkgs, setPkgs] = useState([])
-    const [filter, setFilter] = useState('apt')
+    const [filter, setFilter] = useState('')
     const [selected, setSelected] = useState({})
 
     useEffect(() => {
         console.log('Set packages')
         packageService.getAll().then(response => {
-            setPkgs(response)
+            setPkgs(response.sort((a, b) =>  a.name.localeCompare(b.name)))
         })
     }, [])
 
