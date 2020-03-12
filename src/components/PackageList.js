@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 import { List } from '@material-ui/core'
-import PackageLink from './PackageLink';
+import PackageLink from './PackageLink'
 import PropTypes from 'prop-types'
 
-const PackageList = ({pkgs, filter, setSelected}) => {
+const PackageList = ({ pkgs, filter, setSelected }) => {
     return (
-            <List component="nav" aria-label="main mailbox folders">
-                {
-                    pkgs.filter((pkg) => pkg.name.includes(filter))
+        <List component="nav" aria-label="main mailbox folders">
+            {
+                pkgs.filter((pkg) => pkg.name.includes(filter))
                     .map((pkg) => (
-                    <PackageLink pkg={pkg} setSelected={setSelected} key={pkg.name} />
-                ))}
-            </List >
+                        <PackageLink pkg={pkg} setSelected={setSelected} key={pkg.name} />
+                    ))}
+        </List >
     )
 }
 
@@ -21,4 +21,4 @@ PackageList.propTypes = {
     setSelected: PropTypes.func
 }
 
-export default PackageList;
+export default PackageList

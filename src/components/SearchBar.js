@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { TextField } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
-const SearchBar = ({filter, setFilter}) => {
+const SearchBar = ({ filter, setFilter }) => {
     const handleInputChange = (event) => {
-            setFilter(event.target.value)
+        setFilter(event.target.value)
     }
-    
+
     return (
         <TextField id="standard-basic" label="Search packages" value={filter} onChange={handleInputChange} />
     )
@@ -17,4 +17,4 @@ SearchBar.propTypes = {
     setFilter: PropTypes.func
 }
 
-export default SearchBar;
+export default SearchBar
