@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 const Package = ({ pkgs, selected, setSelected }) => {
     return (
         selected.name !== undefined ?
-            <Card style={{ position: 'fixed' }}>
+            <Card style={{ position: 'fixed', maxWidth: '96em' }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {selected.name}

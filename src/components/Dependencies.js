@@ -19,17 +19,19 @@ const Dependencies = ({ pkgs, dependencies, setSelected, color }) => {
     return (
         <div className={classes.root}>
             <Paper>
-                {dependencies.map(dependency => {
-                    return (
-                        <Chip
-                            key={dependency}
-                            label={dependency}
-                            className={classes.chip}
-                            onClick={setSelected !== undefined ? () => setSelected(pkgs.find(p => p.name === dependency)) : undefined}
-                            color={color}
-                        />
-                    )
-                })}
+                <div style={{ overflow: 'auto', maxHeight: '200px' }}>
+                    {dependencies.map(dependency => {
+                        return (
+                            <Chip
+                                key={dependency}
+                                label={dependency}
+                                className={classes.chip}
+                                onClick={setSelected !== undefined ? () => setSelected(pkgs.find(p => p.name === dependency)) : undefined}
+                                color={color}
+                            />
+                        )
+                    })}
+                </div>
             </Paper>
         </div>
     )
