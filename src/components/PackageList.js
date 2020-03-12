@@ -1,6 +1,7 @@
 import React from 'react';
 import { List } from '@material-ui/core'
 import PackageLink from './PackageLink';
+import PropTypes from 'prop-types'
 
 const PackageList = ({pkgs, filter, setSelected}) => {
     return (
@@ -12,6 +13,12 @@ const PackageList = ({pkgs, filter, setSelected}) => {
                 ))}
             </List >
     )
+}
+
+PackageList.propTypes = {
+    pkgs: PropTypes.array,
+    filter: PropTypes.string,
+    setSelected: PropTypes.func
 }
 
 export default PackageList;

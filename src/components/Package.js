@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent, Typography, CardActions } from '@material-ui/core'
 import Dependencies from './Dependencies'
+import PropTypes from 'prop-types'
 
 const Package = ({ pkgs, selected, setSelected }) => {
     return (
@@ -66,6 +67,12 @@ const Package = ({ pkgs, selected, setSelected }) => {
                 </CardContent>
             </Card>
     )
+}
+
+Package.propTypes = {
+    pkgs: PropTypes.array,
+    selected: PropTypes.object,
+    setSelected: PropTypes.func
 }
 
 export default Package

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Paper, Chip, makeStyles } from '@material-ui/core'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -32,6 +33,13 @@ const Dependencies = ({ pkgs, dependencies, setSelected, color }) => {
         </Paper>
         </div>
     )
+}
+
+Dependencies.propTypes = {
+    pkgs: PropTypes.array,
+    dependencies: PropTypes.array,
+    setSelected: PropTypes.func,
+    color: PropTypes.string
 }
 
 export default Dependencies;
