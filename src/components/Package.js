@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const Package = ({ pkgs, selected, setSelected }) => {
     return (
-        selected ?
+        selected.name !== undefined ?
             <Card style={{ position: 'fixed' }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">

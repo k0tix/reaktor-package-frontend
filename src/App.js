@@ -8,7 +8,7 @@ import PackageList from './components/PackageList'
 const App = () => {
     const [pkgs, setPkgs] = useState([])
     const [filter, setFilter] = useState('apt')
-    const [selected, setSelected] = useState(false)
+    const [selected, setSelected] = useState({})
 
     useEffect(() => {
         console.log('Set packages')
@@ -18,7 +18,6 @@ const App = () => {
     }, [])
 
     return (
-
         <div>
             <Grid container spacing={3}>
                 <Grid item xs={2}>
