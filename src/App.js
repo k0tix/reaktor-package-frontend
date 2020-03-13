@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, Paper, Divider } from '@material-ui/core'
 import Package from './components/Package'
 import SearchBar from './components/SearchBar'
 import packageService from './services/packages'
@@ -19,13 +19,17 @@ const App = () => {
 
     return (
         <div>
-            <Grid container spacing={3}>
-                <Grid item xs={2}>
-                    <SearchBar filter={filter} setFilter={setFilter}/>
-                    <PackageList pkgs={pkgs} filter={filter} setSelected={setSelected}/>
+            <Grid container justify="center" spacing={2}>
+                <Grid item xs={12} md={8}>
+                    <Package pkgs={pkgs} selected={selected} setSelected={setSelected} />
                 </Grid>
-                <Grid item xs={8}>
-                    <Package pkgs={pkgs} selected={selected} setSelected={setSelected}/>
+                <Grid item xs={12} md={7}>
+                    <Paper>
+                        <SearchBar filter={filter} setFilter={setFilter} />
+                        <Divider />
+                        <PackageList pkgs={pkgs} filter={filter} setSelected={setSelected}/>
+                    </Paper>
+
                 </Grid>
             </Grid>
         </div>

@@ -8,7 +8,7 @@ const SearchBar = ({ filter, setFilter }) => {
     }
 
     return (
-        <TextField id="standard-basic" label="Search packages" value={filter} onChange={handleInputChange} />
+        <TextField id="standard-basic" label="Search packages" value={filter} onChange={handleInputChange} style={{ margin: '1em' }} />
     )
 }
 

@@ -5,12 +5,13 @@ import PropTypes from 'prop-types'
 
 const PackageList = ({ pkgs, filter, setSelected }) => {
     return (
-        <List component="nav" aria-label="main mailbox folders">
+        <List component="nav" aria-label="main mailbox folders" style={{ overflow: 'auto', height: '500px' }}>
             {
                 pkgs.filter((pkg) => pkg.name.includes(filter))
                     .map((pkg) => (
                         <PackageLink pkg={pkg} setSelected={setSelected} key={pkg.name} />
-                    ))}
+                    ))
+            }
         </List >
     )
 }

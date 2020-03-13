@@ -1,20 +1,20 @@
 import React from 'react'
-import { Card, CardContent, Typography, CardActions } from '@material-ui/core'
+import { Card, CardContent, Typography } from '@material-ui/core'
 import Dependencies from './Dependencies'
 import PropTypes from 'prop-types'
 
 const Package = ({ pkgs, selected, setSelected }) => {
     return (
         selected.name !== undefined ?
-            <Card style={{ position: 'fixed', maxWidth: '96em' }}>
+            <Card style={{ maxWidth: '96em' }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {selected.name}
                     </Typography>
-                    <Typography color="textSecondary">
+                    <Typography color="textPrimary">
                         description
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="p" style={{ whiteSpace: 'pre-wrap' }}>
                         {selected.description}
                     </Typography>
                     <br />
@@ -26,19 +26,19 @@ const Package = ({ pkgs, selected, setSelected }) => {
                             </Typography>
                             <Dependencies pkgs={pkgs} dependencies={selected.dependencies} setSelected={setSelected} color={'primary'} />
                         </div>
-                        : <Typography variant="body2" color="textPrimary" component="h2">
+                        : <Typography variant="body1" color="textPrimary" component="h2">
                             No dependencies :)
                         </Typography>}
                     <br />
 
                     {selected.reverseDependencies.length > 0 ?
                         <div>
-                            <Typography variant="body2" color="textPrimary" component="h2">
+                            <Typography variant="body1" color="textPrimary" component="h2">
                                 Reverse dependencies
                             </Typography>
                             <Dependencies pkgs={pkgs} dependencies={selected.reverseDependencies} setSelected={setSelected} color={'secondary'} />
                         </div>
-                        : <Typography variant="body2" color="textPrimary" component="h2">
+                        : <Typography variant="body1" color="textPrimary" component="h2">
                             No reverse dependencies :(
                         </Typography>
                     }
@@ -54,12 +54,9 @@ const Package = ({ pkgs, selected, setSelected }) => {
                         : ''
                     }
                 </CardContent>
-                <CardActions>
-
-                </CardActions>
             </Card>
             :
-            <Card style={{ position: 'fixed' }}>
+            <Card>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                     No package selected

@@ -11,6 +11,10 @@ const useStyles = makeStyles(theme => ({
     chip: {
         margin: theme.spacing(0.5),
     },
+    paper: {
+        overflow: 'auto',
+        maxHeight: '200px'
+    }
 }))
 
 const Dependencies = ({ pkgs, dependencies, setSelected, color }) => {
@@ -18,20 +22,18 @@ const Dependencies = ({ pkgs, dependencies, setSelected, color }) => {
 
     return (
         <div className={classes.root}>
-            <Paper>
-                <div style={{ overflow: 'auto', maxHeight: '200px' }}>
-                    {dependencies.map(dependency => {
-                        return (
-                            <Chip
-                                key={dependency}
-                                label={dependency}
-                                className={classes.chip}
-                                onClick={setSelected !== undefined ? () => setSelected(pkgs.find(p => p.name === dependency)) : undefined}
-                                color={color}
-                            />
-                        )
-                    })}
-                </div>
+            <Paper className={classes.paper}>
+                {dependencies.map(dependency => {
+                    return (
+                        <Chip
+                            key={dependency}
+                            label={dependency}
+                            className={classes.chip}
+                            onClick={setSelected !== undefined ? () => setSelected(pkgs.find(p => p.name === dependency)) : undefined}
+                            color={color}
+                        />
+                    )
+                })}
             </Paper>
         </div>
     )
